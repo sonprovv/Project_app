@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import React from "react";
 
-const Header = () => {
+const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity>
@@ -23,7 +23,8 @@ const Header = () => {
                     source={require("../../assets/logo/IGTV.png")}
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={ () => navigation.push('MessagesScreen')
+            }>
                 <Image
                     style={[styles.icon, styles.iconmes]}
                     source={require("../../assets/logo/Messanger.png")}

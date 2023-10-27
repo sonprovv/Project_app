@@ -33,10 +33,11 @@ export const bottomTabIcons = [
 ];
 
 const BottomTabs = ({ icons }) => {
+
     const [activeTab, setActiveTab] = useState("Home");
 
     const Icon = ({ icon }) => (
-        <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
+        <TouchableOpacity onPress={() => setActiveTab(icon.name)} >
             <Image
                 source={{
                     uri: activeTab == icon.name ? icon.inactive : icon.active,

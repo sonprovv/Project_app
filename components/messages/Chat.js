@@ -13,7 +13,7 @@ const Chat = () => {
                                 source={{ uri: mes.image }}
                                 style={styles.image_chat}
                             />
-                            <View style={{ marginLeft: 15 }}>
+                            <View style={{ marginLeft: 10 }}>
                                 <View
                                     style={{
                                         flexDirection: "row",

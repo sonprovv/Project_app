@@ -5,6 +5,8 @@ import Stories from "../components/home/Stories";
 import Post from "../components/home/Post";
 import BottomTabs, { bottomTabIcons } from "../components/home/BottomTabs";
 import { POSTS } from "../data/post";
+import BottomTabs1 from "../components/home/BottomTabs";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = ({navigation}) => {
     return (
@@ -16,8 +18,10 @@ const HomeScreen = ({navigation}) => {
                     <Post post={post} key={index} />
                 ))}
             </ScrollView>
-            <BottomTabs icons={bottomTabIcons} />
+            {/* <BottomTabs icons={bottomTabIcons} /> */}
+            
         </SafeAreaView>
+        
     );
 };
 

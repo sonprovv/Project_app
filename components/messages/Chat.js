@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+    View,
+    Text,
+    ScrollView,
+    Image,
+    StyleSheet,
+    TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { MES } from "../../data/mes";
 
@@ -26,7 +33,7 @@ const Chat = () => {
                                             fontSize: 16,
                                         }}
                                     >
-                                        {mes.user} 
+                                        {mes.user}
                                     </Text>
                                     <Image
                                         source={{ uri: mes.verified }}
@@ -42,13 +49,21 @@ const Chat = () => {
                                 </Text>
                             </View>
                         </View>
-                        <View style={{flexDirection:'row'}}>
-                            <Text style={{color:'#666666', alignSelf:'flex-end'}}>· now</Text>
-                        <TouchableOpacity style={{marginLeft: 20}}>
-                        <Image source={require('../../assets/logo/camera-chat.png')} />
-                        </TouchableOpacity>
+                        <View style={{ flexDirection: "row" }}>
+                            <Text
+                                style={{
+                                    color: "#666666",
+                                    alignSelf: "flex-end",
+                                }}
+                            >
+                                · now
+                            </Text>
+                            <TouchableOpacity style={{ marginLeft: 20 }}>
+                                <Image
+                                    source={require("../../assets/logo/camera-chat.png")}
+                                />
+                            </TouchableOpacity>
                         </View>
-                        
                     </TouchableOpacity>
                 ))}
             </ScrollView>
@@ -58,11 +73,11 @@ const Chat = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
     },
-    containerLeft:{
+    containerLeft: {
         flexDirection: "row",
         alignItems: "center",
         marginBottom: 15,

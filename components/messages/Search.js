@@ -12,6 +12,7 @@ const Search = () => {
                 keyboardType="email-address"
                 textContentType="emailAddress"
                 style={{fontSize: 16, color:'#fff'}}
+                
             >
                 
             </TextInput>

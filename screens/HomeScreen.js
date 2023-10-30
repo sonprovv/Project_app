@@ -8,20 +8,17 @@ import { POSTS } from "../data/post";
 import BottomTabs1 from "../components/home/BottomTabs";
 import { StatusBar } from "expo-status-bar";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Header navigation={navigation}/>
+            <Header navigation={navigation} />
             <Stories />
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {POSTS.map((post, index) => (
                     <Post post={post} key={index} />
                 ))}
             </ScrollView>
-            {/* <BottomTabs icons={bottomTabIcons} /> */}
-            
         </SafeAreaView>
-        
     );
 };
 

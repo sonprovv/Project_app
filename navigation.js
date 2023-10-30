@@ -12,8 +12,6 @@ import NewPostScreen from "./screens/NewPostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
 import Ionic from "react-native-vector-icons/Ionicons";
 
-const home_icon = require("./assets/logo/home.png");
-
 const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
@@ -30,7 +28,7 @@ const MyTab = () => {
                     paddingTop: 10,
                 },
 
-                tabBarIcon: ({ focused}) => {
+                tabBarIcon: ({ focused }) => {
                     if (route.name === "Home") {
                         source = focused
                             ? require("./assets/logo/home.png")
@@ -40,7 +38,9 @@ const MyTab = () => {
                             ? require("./assets/logo/search.png")
                             : require("./assets/logo/search-outline.png");
                     } else if (route.name === "Add") {
-                        source = require("./assets/logo/post.png");
+                        source = focused
+                            ? require("./assets/logo/post.png")
+                            : require("./assets/logo/post-outline.png");
                     } else if (route.name === "Notification") {
                         source = focused
                             ? require("./assets/logo/heart.png")
@@ -48,9 +48,9 @@ const MyTab = () => {
                     } else if (route.name === "Profile") {
                         source = focused
                             ? require("./assets/logo/profile.png")
-                            : require("./assets/logo/profile-outline.png")
+                            : require("./assets/logo/profile-outline.png");
                     }
-                    return <Image source={source} style={{width: 30}}/>;
+                    return <Image source={source} style={{ width: 30 }} />;
                 },
             })}
         >

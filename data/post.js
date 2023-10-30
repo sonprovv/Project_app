@@ -3,7 +3,7 @@ import { USER } from "./user";
 export const POSTS = [
     {
         imageURL:
-            "https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-6/361619189_2104218889926158_7784223562316445152_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGw79JmW9Su8jk8hLXbanGQnkAGwjvsOh-eQAbCO-w6H6jc1Bsu9sn8vCx1SFVr3mKNVJUWumRn90pyIRjNlOaQ&_nc_ohc=onpknFO9BNAAX8SE4gV&_nc_ht=scontent.fhan3-1.fna&oh=00_AfCzIccr7UfwEOcqOuDaJuinryjltA3PqOpuw_yL0UZg8Q&oe=653F48C2",
+            "https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-6/361619189_2104218889926158_7784223562316445152_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGw79JmW9Su8jk8hLXbanGQnkAGwjvsOh-eQAbCO-w6H6jc1Bsu9sn8vCx1SFVr3mKNVJUWumRn90pyIRjNlOaQ&_nc_ohc=QhLBGNFfUroAX-MQOMI&_nc_ht=scontent.fhan3-1.fna&oh=00_AfAhExDEercUbPl38DxbzTxoB8LkUSX4dIKoWsUXd-bJYA&oe=65453782",
         user: USER[0].user,
         likes: 1903,
         caption: "Quá đẹp trai =))",

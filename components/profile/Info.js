@@ -3,31 +3,31 @@ import React from "react";
 import { USER } from "../../data/user";
 
 const Info = () => {
-    return (
-        // <View style={styles.wrapper}>
-        //     <View style={styles.container}>
-        //     <Image
-        //         source={{ uri: USER[0].image }}
-        //         style={styles.imageProfile}
-        //     />
-        //     <View style={styles.box}>
-        //         <Text style={styles.number}>{USER[0].posts}</Text>
-        //         <Text style={styles.text}>Posts</Text>
-        //     </View>
-        //     <View style={styles.box}>
-        //         <Text style={styles.number}>{USER[0].followers}</Text>
-        //         <Text style={styles.text}>Followers</Text>
-        //     </View>
-        //     <View style={styles.box}>
-        //         <Text style={styles.number}>{USER[0].following}</Text>
-        //         <Text style={styles.text}>Following</Text>
-        //     </View>
-        //     </View>
-        //     <View>
-        //         <Text>{USER[0]}.user</Text>
-        //     </View>
-        // </View>
-    );
+    // return (
+    //     <View style={styles.wrapper}>
+    //         <View style={styles.container}>
+    //         <Image
+    //             source={{ uri: USER[0].image }}
+    //             style={styles.imageProfile}
+    //         />
+    //         <View style={styles.box}>
+    //             <Text style={styles.number}>{USER[0].posts}</Text>
+    //             <Text style={styles.text}>Posts</Text>
+    //         </View>
+    //         <View style={styles.box}>
+    //             <Text style={styles.number}>{USER[0].followers}</Text>
+    //             <Text style={styles.text}>Followers</Text>
+    //         </View>
+    //         <View style={styles.box}>
+    //             <Text style={styles.number}>{USER[0].following}</Text>
+    //             <Text style={styles.text}>Following</Text>
+    //         </View>
+    //         </View>
+    //         <View>
+    //             <Text>{USER[0]}.user</Text>
+    //         </View>
+    //     </View>
+    // );
 };
 
 const styles = StyleSheet.create({

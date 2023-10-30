@@ -5,7 +5,10 @@ const BottomTabs = () => {
     return (
         <TouchableOpacity style={styles.wrapper}>
             <View style={styles.container}>
-                <Image source={require('../../assets/logo/camera-bottom-chat.png')} style={styles.image}/>
+                <Image
+                    source={require("../../assets/logo/camera-bottom-chat.png")}
+                    style={styles.image}
+                />
                 <Text style={{ color: "#3897F0" }}>Camera</Text>
             </View>
         </TouchableOpacity>
@@ -13,20 +16,19 @@ const BottomTabs = () => {
 };
 
 const styles = StyleSheet.create({
-    wrapper:{
-        position: 'absolute',
-        width:'100%',
-        bottom: '3%',
+    wrapper: {
+        position: "absolute",
+        width: "100%",
+        bottom: "3%",
         padding: 15,
         zIndex: 1,
-        backgroundColor: '#121212'
+        backgroundColor: "#121212",
     },
-    image:{
-    },
-    container:{
-        flexDirection:'row',
-        justifyContent:'center',
+    image: {},
+    container: {
+        flexDirection: "row",
+        justifyContent: "center",
         gap: 10,
-    }
+    },
 });
 export default BottomTabs;

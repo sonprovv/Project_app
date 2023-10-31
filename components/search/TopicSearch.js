@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, StyleSheet, Image } from "react-native";
+import {
+    View,
+    Text,
+    ScrollView,
+    StyleSheet,
+    Image,
+    TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { TOPIC } from "../../data/topic";
 
@@ -7,15 +14,15 @@ const TopicSearch = () => {
         <ScrollView
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            style={{ marginHorizontal: 5, marginBottom: 8, }}
+            style={{ marginHorizontal: 5, marginBottom: 8 }}
         >
             {TOPIC.map((top, index) => (
-                <View key={index} style={styles.topic}>
+                <TouchableOpacity key={index} style={styles.topic}>
                     <Image source={top.icon} />
                     <Text style={{ color: "#fff", fontSize: 16 }}>
                         {top.name}
                     </Text>
-                </View>
+                </TouchableOpacity>
             ))}
         </ScrollView>
     );

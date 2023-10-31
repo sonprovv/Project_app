@@ -50,7 +50,7 @@ const MyTab = () => {
                             ? require("./assets/logo/profile.png")
                             : require("./assets/logo/profile-outline.png");
                     }
-                    return <Image source={source} style={{ width: 30 }} />;
+                    return <Image source={source} style={{  }} />;
                 },
             })}
         >

@@ -10,14 +10,7 @@ import React from "react";
 
 const SearchBox = () => {
     return (
-        <View
-            style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginHorizontal: 5,
-            }}
-        >
+        <View style={styles.container}>
             <View style={styles.inputField}>
                 <Image
                     source={require("../../assets/logo/search-mes.png")}
@@ -51,6 +44,12 @@ const styles = StyleSheet.create({
         padding: 12,
         backgroundColor: "#262626",
         marginBottom: 10,
+    },
+    container: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginHorizontal: 5,
     },
 });
 export default SearchBox;

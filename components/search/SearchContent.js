@@ -113,7 +113,7 @@ const SearchContent = (props) => {
                                 >
                                     <Image
                                         source={data.images[5]}
-                                        style={{ width: 142, height: 300 }}
+                                        style={{ width: 142, height: 302 }}
                                     />
                                 </TouchableOpacity>
                             </View>

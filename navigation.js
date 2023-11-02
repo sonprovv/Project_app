@@ -10,7 +10,6 @@ import "react-native-gesture-handler";
 import SearchScreen from "./screens/SearchScreen";
 import NewPostScreen from "./screens/NewPostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
-import Ionic from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +49,7 @@ const MyTab = () => {
                             ? require("./assets/logo/profile.png")
                             : require("./assets/logo/profile-outline.png");
                     }
-                    return <Image source={source} style={{  }} />;
+                    return <Image source={source} />;
                 },
             })}
         >

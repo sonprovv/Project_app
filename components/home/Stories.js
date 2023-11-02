@@ -1,13 +1,23 @@
-import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
-import React from 'react'
-import { USER } from '../../data/user'
+import {
+    View,
+    Text,
+    ScrollView,
+    Image,
+    StyleSheet,
+    TouchableOpacity,
+} from "react-native";
+import React from "react";
+import { USER } from "../../data/user";
 
 const Stories = () => {
-  return (
-    <View style={{marginBottom: 13}}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {USER.map((story, index) => (                  
-                        <View key={index} style={{alignItems: 'center'}}>
+    return (
+        <View style={{ marginBottom: 13 }}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                {USER.map((story, index) => (
+                    <TouchableOpacity
+                        key={index}
+                        style={{ alignItems: "center" }}
+                    >
                         <Image
                             source={{ uri: story.image }}
                             style={styles.story}
@@ -17,12 +27,12 @@ const Stories = () => {
                                 ? story.user.slice(0, 9).toLowerCase() + "..."
                                 : story.user.toLowerCase()}
                         </Text>
-                    </View>                   
+                    </TouchableOpacity>
                 ))}
             </ScrollView>
-    </View>
-  )
-}
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     story: {
@@ -34,6 +44,6 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderColor: "#ff8501",
     },
-})
+});
 
-export default Stories
+export default Stories;

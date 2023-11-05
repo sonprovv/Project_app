@@ -15,16 +15,17 @@
 
 2. Git commit: được sử dụng để lưu các thay đổi trong vùng đệm (staging area) của Git vào lịch sử của dự án. Lịch sử của dự án là nơi lưu trữ tất cả các thay đổi đã được thực hiện đối với dự án của bạn.
 - Cú pháp cơ bản của lệnh git commit:
+
 + Ví dụ: để lưu các thay đổi trong vùng đệm với thông báo "Thêm một tính năng mới", bạn có thể sử dụng lệnh sau:
-git commit -m "Thêm một tính năng mới"
++ git commit -m "Thêm một tính năng mới"
 
 3. git push: được sử dụng để đẩy các thay đổi từ kho lưu trữ cục bộ của bạn lên kho lưu trữ từ xa. Kho lưu trữ từ xa là kho lưu trữ của dự án của bạn trên GitHub
 - Dưới đây là cú pháp cơ bản của lệnh git push:
-git push -u origin (Tên nhánh): câu lệnh này sẽ chỉ cần nhập khi lần đầu push lên nhánh. Kể từ lần push thứ 2 thì chỉ cần gõ lệnh git push là code sẽ tự động được push lên nhánh.
++ git push -u origin (Tên nhánh): câu lệnh này sẽ chỉ cần nhập khi lần đầu push lên nhánh. Kể từ lần push thứ 2 thì chỉ cần gõ lệnh git push là code sẽ tự động được push lên nhánh.
 
 4. git checkout -b : được sử dụng để tạo và chuyển sang một nhánh mới trong Git. Cờ -b có nghĩa là "branch", và nó sẽ yêu cầu Git tạo một nhánh mới với tên được chỉ định.
 - Dưới đây là cú pháp của lệnh git checkout -b:
-git checkout -b (tên-nhánh)
++ git checkout -b (tên-nhánh)
 + Ví dụ: để tạo một nhánh mới có tên feature và chuyển sang nhánh đó, bạn sẽ sử dụng lệnh sau:
 git checkout -b feature
 

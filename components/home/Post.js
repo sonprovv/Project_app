@@ -6,23 +6,23 @@ const postFooterIcons = [
     {
         name: "Like",
         imageUrl:
-            "https://img.icons8.com/material-outlined/48/ffffff/like--v1.png",
+            require('../../assets/logo/heart-outline.png'),
         likedImageUrl: "https://icons8.com/icon/19413/love",
     },
     {
         name: "Comment",
         imageUrl:
-            "https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/ffffff/external-comments-social-media-ui-tanah-basah-basic-outline-tanah-basah.png",
+            require('../../assets/logo/comment.png'),
     },
     {
         name: "Share",
         imageUrl:
-            "https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/ffffff/external-message-customer-reviews-tanah-basah-basic-outline-tanah-basah.png",
+            require('../../assets/logo/share.png'),
     },
     {
         name: "Save",
         imageUrl:
-            "https://img.icons8.com/material-outlined/48/ffffff/bookmark-ribbon--v1.png",
+            require('../../assets/logo/save.png'),
     },
 ];
 const Post = ({ post }) => {
@@ -54,7 +54,7 @@ const PostHeader = ({ post }) => (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Image
                 style={styles.story}
-                source={{ uri: post.profile_picture }}
+                source={ post.profile_picture }
             />
             <View style={{ marginLeft: 6 }}>
                 <Text style={{ color: "#fff", fontWeight: "700" }}>
@@ -109,7 +109,7 @@ const PostFooter = () => (
 
 const Icon = ({ imgStyle, imgUrl }) => (
     <TouchableOpacity>
-        <Image style={imgStyle} source={{ uri: imgUrl }} />
+        <Image style={imgStyle} source={imgUrl } />
     </TouchableOpacity>
 );
 
@@ -170,17 +170,14 @@ const styles = StyleSheet.create({
         backgroundColor: "red",
     },
     footerIcon: {
-        width: 33,
-        height: 33,
+        width: 30,
+        height: 30,
     },
     leftFooterIconsContainer: {
         flexDirection: "row",
         width: "32%",
         justifyContent: "space-between",
     },
-    shareIcon: {
-        transform: [{ rotate: "320deg" }],
-        marginTop: -3,
-    },
+    
 });
 export default Post;

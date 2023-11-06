@@ -1,11 +1,11 @@
 export const USER = [
     {
         user: "hieeus.ngx",
-        image: "https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-6/361619189_2104218889926158_7784223562316445152_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGw79JmW9Su8jk8hLXbanGQnkAGwjvsOh-eQAbCO-w6H6jc1Bsu9sn8vCx1SFVr3mKNVJUWumRn90pyIRjNlOaQ&_nc_ohc=QhLBGNFfUroAX-MQOMI&_nc_ht=scontent.fhan3-1.fna&oh=00_AfAhExDEercUbPl38DxbzTxoB8LkUSX4dIKoWsUXd-bJYA&oe=65453782",
+        image: require('../assets/user/user1.jpeg'),
     },
     {
         user: "im.hieu037",
-        image: "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/332060186_1851521718546713_1408545194970932353_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeFHlfD1w4GLHZLOlhdKUhnnYwTo7TZcLZRjBOjtNlwtlD4P9FeJLXM0EAb_pdtkdHP5LxXOwhSWU3XXTV4v8X7E&_nc_ohc=4x-GTT_RiukAX8P5gWD&_nc_ht=scontent.fhan3-2.fna&oh=03_AdTAEU4bGUTNpgxu-iOWmI5z1gXlyEMX7anp-mNi3aK8bg&oe=656357E3",
+        image: require('../assets/user/user2.jpeg'),
     },
     {
         user: "nghieu2103",
@@ -13,7 +13,7 @@ export const USER = [
     },
     {
         user: "hailn15_",
-        image: "https://instagram.fhan3-1.fna.fbcdn.net/v/t51.2885-19/294624038_452414379783294_8022314993419998606_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fhan3-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=Vs3CIfAycrIAX-N9_ia&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfB2taAcNKXdUMajy264EMUg5XWZd0EtsbhpKOd3BJgZVg&oe=65413377&_nc_sid=8b3546",
+        image: require('../assets/user/user4.jpeg'),
     },
     {
         user: "tue",
@@ -21,7 +21,7 @@ export const USER = [
     },
     {
         user: "vietemmm03",
-        image: "https://instagram.fhan3-2.fna.fbcdn.net/v/t51.2885-19/332624908_1849956318694009_8995775773355687377_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fhan3-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=5CUQa0nrUgwAX-LrUB3&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDtJ_z8JEKosSTOGgw3dDnKs4ZusslYcuF0GRJ1BMqtJw&oe=653FCF40&_nc_sid=8b3546",
+        image: require('../assets/user/user6.jpeg'),
     },
     {
         user: "ando",

@@ -42,5 +42,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 20,
     },
+    icon:{
+        width: 30,
+        height: 30,
+    }
 });
 export default Header;

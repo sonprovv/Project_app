@@ -10,6 +10,8 @@ import "react-native-gesture-handler";
 import SearchScreen from "./screens/SearchScreen";
 import NewPostScreen from "./screens/NewPostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
+import FriendProfile from "./components/notification/FriendProfile";
+import EditProfile from "./components/profile/EditProfile";
 
 const Tab = createBottomTabNavigator();
 
@@ -74,6 +76,8 @@ const SignedInStack = () => {
                     name="MessagesScreen"
                     component={MessagesScreen}
                 />
+                <Stack.Screen name="FriendProfile" component={FriendProfile} />
+                <Stack.Screen name="EditProfile" component={EditProfile} />
             </Stack.Navigator>
             <StatusBar barStyle="light-content" backgroundColor="#000" />
         </NavigationContainer>

@@ -28,7 +28,7 @@ const SearchBox = () => {
             <TouchableOpacity style={{ width: 30, height: 30 }}>
                 <Image
                     source={require("../../assets/logo/live.png")}
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: 20, height: 20 }}
                 />
             </TouchableOpacity>
         </View>

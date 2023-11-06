@@ -10,8 +10,10 @@ import React, { useState } from "react";
 import { Divider } from "react-native-elements";
 import { FRIENDPROFILEDATA } from "../data/friendProfileData";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
 const NotificationScreen = () => {
+    const navigation = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#000" }}>
             <Text
@@ -31,7 +33,7 @@ const NotificationScreen = () => {
                 >
                     New
                 </Text>
-                {FRIENDPROFILEDATA.slice(3, 4).map((data, index) => {
+                {FRIENDPROFILEDATA.slice(2, 4).map((data, index) => {
                     const [follow, setFollow] = useState(data.follow);
                     return (
                         <View key={index} style={{ width: "100%" }}>
@@ -63,6 +65,14 @@ const NotificationScreen = () => {
                                     />
                                     <Text
                                         style={{ fontSize: 15, color: "#fff" }}
+                                        onPress={() => navigation.push('FriendProfile', {
+                                            name: data.name,
+                                            profileImage: data.profileImage,
+                                            follow: data.follow,
+                                            post: data.posts,
+                                            followers: data.followers,
+                                            following: data.following
+                                        })}
                                     >
                                         <Text style={{ fontWeight: "bold" }}>
                                             {data.name}
@@ -128,6 +138,15 @@ const NotificationScreen = () => {
                                                 alignItems: "center",
                                                 maxWidth: "64%",
                                             }}
+                                            
+                                        onPress={() => navigation.push('FriendProfile', {
+                                            name: data.name,
+                                            profileImage: data.profileImage,
+                                            follow: data.follow,
+                                            post: data.posts,
+                                            followers: data.followers,
+                                            following: data.following
+                                        })}
                                         >
                                             <Image
                                                 source={data.profileImage}
@@ -279,8 +298,12 @@ const NotificationScreen = () => {
                         </View>
                     );
                 })}
-                <TouchableOpacity style={{alignItems: 'center', marginTop: 10}}>
-                    <Text style={{color: '#3493d9'}}>See All Suggestions</Text>
+                <TouchableOpacity
+                    style={{ alignItems: "center", marginTop: 10 }}
+                >
+                    <Text style={{ color: "#3493d9" }}>
+                        See All Suggestions
+                    </Text>
                 </TouchableOpacity>
             </ScrollView>
         </SafeAreaView>

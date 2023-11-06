@@ -40,7 +40,7 @@ const SearchContent = (props) => {
         <View>
             {searchData.map((data, index) => {
                 return (
-                    <View>
+                    <View >
                         {data.id === 0 ? (
                             <View
                                 style={{

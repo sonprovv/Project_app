@@ -1,14 +1,14 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-const TopBar = () => {
+const TopBar = ({accountName}) => {
     return (
         <View style={styles.container}>
             <View
                 style={{ width: 21}}
             ></View>
             <TouchableOpacity style={styles.profileName}>
-                <Text style={styles.name}>hieeus.ngx</Text>
+                <Text style={styles.name}>{accountName}</Text>
                 <Image
                     source={require("../../assets/logo/accounts-list.png")}
                 />
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         marginHorizontal: 15,
         alignItems: "center",
-        marginBottom: 15,
     },
     profileName: {
         flexDirection: "row",

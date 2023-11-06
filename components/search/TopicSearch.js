@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: 'center',
     },
 });
 

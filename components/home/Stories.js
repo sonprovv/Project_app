@@ -19,7 +19,7 @@ const Stories = () => {
                         style={{ alignItems: "center" }}
                     >
                         <Image
-                            source={{ uri: story.image }}
+                            source={ story.image }
                             style={styles.story}
                         />
                         <Text style={{ color: "white" }}>

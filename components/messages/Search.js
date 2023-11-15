@@ -9,9 +9,7 @@ const Search = () => {
                 placeholderTextColor="#8E8E93"
                 placeholder="Search"
                 autoCapitalize="none"
-                keyboardType="email-address"
-                textContentType="emailAddress"
-                style={{fontSize: 16, color:'#fff'}}
+                style={{fontSize: 16, color:'#fff', width: '90%'}}
                 
             >
                 
@@ -25,7 +23,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems:'center',
         borderRadius: 10,
-        padding: 12,
+        padding: 10,
         backgroundColor: "#262626",
         marginBottom: 10,
         marginHorizontal: 15,

@@ -6,6 +6,7 @@ import {
     ToastAndroid,
     Image,
     TextInput,
+    StyleSheet,
 } from "react-native";
 import React from "react";
 
@@ -16,29 +17,14 @@ const EditProfile = ({ route, navigation }) => {
     };
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#000" }}>
-            <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginHorizontal: 15,
-                }}
-            >
+            <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Text style={{ color: "#f9f9f9", fontSize: 14 }}>
                         Cancel
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Text
-                        style={{
-                            color: "#f9f9f9",
-                            fontSize: 16,
-                            fontWeight: "600",
-                        }}
-                    >
-                        Edit Profile
-                    </Text>
+                    <Text style={styles.heading}>Edit Profile</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
@@ -59,86 +45,36 @@ const EditProfile = ({ route, navigation }) => {
                 </Text>
             </View>
             <View style={{ marginHorizontal: 15 }}>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Name</Text>
                     <TextInput
                         placeholder="Name"
                         defaultValue={name}
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        style={styles.inputField}
                     />
                 </View>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>
                         Username
                     </Text>
                     <TextInput
                         placeholder="Name"
                         defaultValue={accountName}
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        style={styles.inputField}
                     />
                 </View>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Website</Text>
                     <TextInput
                         placeholder="Website"
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        style={styles.inputField}
                     />
                 </View>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Bio</Text>
                     <TextInput
-                        placeholder="Name"
-                        style={{
-                            fontSize: 16,
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        placeholder="Bio"
+                        style={styles.inputFieldBio}
                     />
                 </View>
             </View>
@@ -156,66 +92,27 @@ const EditProfile = ({ route, navigation }) => {
                     </Text>
                 </TouchableOpacity>
             </View>
-            <View style={{marginHorizontal: 15}}>
-                <Text style={{fontSize: 15, fontWeight:'bold', color: '#fff', marginTop: 10}}>Private Information</Text>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+            <View style={{ marginHorizontal: 15 }}>
+                <Text style={styles.title}>Private Information</Text>
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Email</Text>
                     <TextInput
-                        placeholder="Website"
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        placeholder="Email"
+                        style={styles.inputField}
                     />
                 </View>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Phone</Text>
                     <TextInput
-                        placeholder="Website"
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        placeholder="Phone"
+                        style={styles.inputField}
                     />
                 </View>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <View style={styles.center}>
                     <Text style={{ color: "#fff", fontSize: 15 }}>Gender</Text>
                     <TextInput
-                        placeholder="Website"
-                        style={{
-                            fontSize: 16,
-                            borderBottomWidth: 1,
-                            borderColor: "#FFFFFF26",
-                            color: "#fff",
-                            width: "80%",
-                            padding: 15,
-                        }}
+                        placeholder="Gender"
+                        style={styles.inputField}
                     />
                 </View>
             </View>
@@ -224,3 +121,42 @@ const EditProfile = ({ route, navigation }) => {
 };
 
 export default EditProfile;
+
+const styles = StyleSheet.create({
+    header: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginHorizontal: 15,
+    },
+    heading: {
+        color: "#f9f9f9",
+        fontSize: 16,
+        fontWeight: "600",
+    },
+    center: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    inputField: {
+        fontSize: 16,
+        borderBottomWidth: 1,
+        borderColor: "#FFFFFF26",
+        color: "#fff",
+        width: "80%",
+        padding: 15,
+    },
+    inputFieldBio:{
+        fontSize: 16,
+        color: "#fff",
+        width: "80%",
+        padding: 15,
+    },
+    title: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "#fff",
+        marginTop: 10,
+    },
+});

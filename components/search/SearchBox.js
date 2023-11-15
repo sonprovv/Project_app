@@ -20,9 +20,8 @@ const SearchBox = () => {
                     placeholderTextColor="#8E8E93"
                     placeholder="Search"
                     autoCapitalize="none"
-                    keyboardType="email-address"
-                    textContentType="emailAddress"
-                    style={{ fontSize: 16, color: "#fff" }}
+                    keyboardType="default"
+                    style={{ fontSize: 16, color: "#fff", width:'90%' }}
                 ></TextInput>
             </View>
             <TouchableOpacity style={{ width: 30, height: 30 }}>
@@ -37,11 +36,11 @@ const SearchBox = () => {
 
 const styles = StyleSheet.create({
     inputField: {
-        minWidth: "87%",
+        width: "90%",
         flexDirection: "row",
         alignItems: "center",
         borderRadius: 10,
-        padding: 12,
+        padding: 10,
         backgroundColor: "#262626",
         marginBottom: 10,
     },

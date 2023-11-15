@@ -1,17 +1,17 @@
-import { Image, StatusBar } from "react-native";
+import { Image, SafeAreaView, StatusBar } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./screens/HomeScreen";
-import MessagesScreen from "./screens/MessagesScreen";
-import ProfileScreen from "./screens/ProfileScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import "react-native-gesture-handler";
 import SearchScreen from "./screens/SearchScreen";
+import HomeScreen from "./screens/HomeScreen";
 import NewPostScreen from "./screens/NewPostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
 import FriendProfile from "./components/notification/FriendProfile";
 import EditProfile from "./components/profile/EditProfile";
+import ProfileScreen from "./screens/ProfileScreen";
+import MessagesScreen from "./screens/MessagesScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,6 +64,21 @@ const MyTab = () => {
     );
 };
 
+const MyDrawer = () => {
+    const Archive = () => {
+        return (
+            <SafeAreaView>
+                <Text>Archive</Text>
+            </SafeAreaView>
+        )
+    }
+    return (
+        <Drawer.Navigator>
+            <Drawer.Screen name="Archive" component={Archive} />
+        </Drawer.Navigator>
+    )
+}
+
 const SignedInStack = () => {
     return (
         <NavigationContainer>
@@ -78,6 +93,7 @@ const SignedInStack = () => {
                 />
                 <Stack.Screen name="FriendProfile" component={FriendProfile} />
                 <Stack.Screen name="EditProfile" component={EditProfile} />
+                
             </Stack.Navigator>
             <StatusBar barStyle="light-content" backgroundColor="#000" />
         </NavigationContainer>

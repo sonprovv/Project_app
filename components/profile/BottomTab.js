@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { Image } from "react-native";
@@ -12,16 +12,7 @@ const BottomTab = () => {
     for (let index = 0; index < numberOfSquare; index++) {
         squares.push(
             <View key={index}>
-                <View
-                    style={{
-                        width: 142,
-                        height: 150,
-                        backgroundColor: "white",
-                        marginVertical: 1,
-                        opacity: 0.1,
-                    }}
-                >
-                </View>
+                <View style={styles.image}></View>
             </View>
         );
     }
@@ -29,28 +20,22 @@ const BottomTab = () => {
         return (
             <ScrollView
                 showsVerticalScrollIndicator={false}
-                style={{ flex: 1, backgroundColor: 'black' }}
+                style={{ flex: 1, backgroundColor: "black" }}
             >
-                <View
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        flexWrap: "wrap",
-                        flexDirection: "row",
-                        paddingVertical: 5,
-                        justifyContent: "space-between",
-                    }}
-                >
-                    {squares}
-                </View>
-                
+                <View style={styles.squares}>{squares}</View>
             </ScrollView>
         );
     };
     const Tags = () => {
         return (
-            <View style={{ backgroundColor: "#000", flex: 1 }}>
-                <Text style={{ color: "#fff" }}>Tags</Text>
+            <View style={styles.container}>
+                <View style={styles.iconCamera}>
+                    <Image
+                        source={require("../../assets/logo/camera.png")}
+                        style={{ width: 60, height: 60 }}
+                    />
+                </View>
+                <Text style={styles.desc}>Chưa có bài viết</Text>
             </View>
         );
     };
@@ -69,11 +54,11 @@ const BottomTab = () => {
                     if (route.name === "Posts") {
                         iconName = focused
                             ? require("../../assets/logo/grid-tab.png")
-                            : require("../../assets/logo/grid-tab.png");
+                            : require("../../assets/logo/grid-tab-onPressOut.png");
                     } else if (route.name === "Tags") {
                         iconName = focused
                             ? require("../../assets/logo/tags-tab.png")
-                            : require("../../assets/logo/tags-tab.png");
+                            : require("../../assets/logo/tags-tab-onPressOut.png");
                     }
                     return <Image source={iconName} />;
                 },
@@ -86,3 +71,37 @@ const BottomTab = () => {
 };
 
 export default BottomTab;
+
+const styles = StyleSheet.create({
+    image: {
+        width: 142,
+        height: 150,
+        backgroundColor: "white",
+        marginVertical: 1,
+        opacity: 0.1,
+    },
+    squares: {
+        flexWrap: "wrap",
+        flexDirection: "row",
+        paddingVertical: 5,
+        justifyContent: "space-between",
+    },
+    container: {
+        backgroundColor: "#000",
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    iconCamera: {
+        padding: 10,
+        borderWidth: 2,
+        borderColor: "#fff",
+        borderRadius: 100,
+        margin: 20,
+    },
+    desc: {
+        color: "#fff",
+        fontSize: 24,
+        fontWeight: "bold",
+    },
+});

@@ -40,13 +40,13 @@ const SearchContent = (props) => {
         <View>
             {searchData.map((data, index) => {
                 return (
-                    <View >
+                    <View key={index} style={{paddingBottom: 2}}>
                         {data.id === 0 ? (
                             <View
                                 style={{
                                     flexDirection: "row",
                                     flexWrap: "wrap",
-                                    justifyContent: "space-between",
+                                    gap: 2,
                                 }}
                             >
                                 {data.images.map((imageData, imgIndex) => {
@@ -56,7 +56,8 @@ const SearchContent = (props) => {
                                                 props.data(imageData)
                                             }
                                             onPressOut={() => props.data(null)}
-                                            style={{ paddingBottom: 2 }}
+                                            style={{flexGrow: 1, flexBasis: 142 }}
+                                            key={imgIndex}
                                         >
                                             <Image
                                                 source={imageData}
@@ -74,14 +75,14 @@ const SearchContent = (props) => {
                             <View
                                 style={{
                                     flexDirection: "row",
-                                    justifyContent: "space-between",
+                                    gap:2,
                                 }}
                             >
                                 <View
                                     style={{
                                         flexDirection: "row",
                                         flexWrap: "wrap",
-                                        justifyContent: "space-between",
+                                        gap: 2,
                                         width: 286,
                                     }}
                                 >
@@ -95,7 +96,8 @@ const SearchContent = (props) => {
                                                 onPressOut={() =>
                                                     props.data(null)
                                                 }
-                                                style={{ paddingBottom: 2 }}
+                                                
+                                                key={imgIndex}
                                             >
                                                 <Image
                                                     source={imageData}
@@ -122,13 +124,13 @@ const SearchContent = (props) => {
                             <View
                                 style={{
                                     flexDirection: "row",
-                                    justifyContent: "space-between",
+                                    gap:2,
                                 }}
                             >
                                 <TouchableOpacity
                                     onPressIn={() => props.data(data.images[2])}
                                     onPressOut={() => props.data(null)}
-                                    style={{ paddingRight: 2 }}
+                                    
                                 >
                                     <Image
                                         source={data.images[2]}
@@ -139,7 +141,7 @@ const SearchContent = (props) => {
                                     style={{
                                         flexDirection: "row",
                                         flexWrap: "wrap",
-                                        justifyContent: "space-between",
+                                        gap:2,
                                         width: 142,
                                     }}
                                 >
@@ -153,7 +155,8 @@ const SearchContent = (props) => {
                                                 onPressOut={() =>
                                                     props.data(null)
                                                 }
-                                                style={{ paddingBottom: 2 }}
+                                               
+                                                key={imgIndex}
                                             >
                                                 <Image
                                                     source={imageData}

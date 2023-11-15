@@ -18,7 +18,7 @@ const Chat = () => {
                         <View style={styles.containerLeft}>
                             <Image
                                 source={{ uri: mes.image }}
-                                style={styles.image_chat}
+                                style={styles.image}
                             />
                             <View style={{ marginLeft: 10 }}>
                                 <View
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 15,
     },
-    image_chat: {
+    image: {
         width: 70,
         height: 70,
         borderRadius: 50,

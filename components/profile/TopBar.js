@@ -1,12 +1,10 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-const TopBar = ({accountName}) => {
+const TopBar = ({ accountName }) => {
     return (
         <View style={styles.container}>
-            <View
-                style={{ width: 21}}
-            ></View>
+            <View style={{ width: 21 }}></View>
             <TouchableOpacity style={styles.profileName}>
                 <Text style={styles.name}>{accountName}</Text>
                 <Image
@@ -35,7 +33,7 @@ const styles = StyleSheet.create({
     name: {
         color: "#F9F9F9",
         fontWeight: "600",
-        fontSize: 16
+        fontSize: 16,
     },
 });
 

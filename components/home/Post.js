@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { Divider } from "react-native-elements";
-import React, { useState } from "react";
+import Carousel,{Pagination} from "react-native-snap-carousel";
+import React, { useState, useref } from "react";
 
 const postFooterIcons = [
     {

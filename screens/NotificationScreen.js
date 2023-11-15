@@ -5,6 +5,7 @@ import {
     ScrollView,
     TouchableOpacity,
     Image,
+    StyleSheet,
 } from "react-native";
 import React, { useState } from "react";
 import { Divider } from "react-native-elements";
@@ -15,68 +16,37 @@ import { useNavigation } from "@react-navigation/native";
 const NotificationScreen = () => {
     const navigation = useNavigation();
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: "#000" }}>
-            <Text
-                style={{
-                    fontSize: 20,
-                    fontWeight: "bold",
-                    padding: 10,
-                    color: "#fff",
-                }}
-            >
-                Activity
-            </Text>
+        <SafeAreaView style={styles.container}>
+            <Text style={styles.heading}>Activity</Text>
             <Divider />
             <ScrollView style={{ margin: 10 }}>
-                <Text
-                    style={{ fontWeight: "600", color: "#fff", fontSize: 15 }}
-                >
-                    New
-                </Text>
+                <Text style={styles.newTitle}>New</Text>
                 {FRIENDPROFILEDATA.slice(2, 4).map((data, index) => {
                     const [follow, setFollow] = useState(data.follow);
                     return (
                         <View key={index} style={{ width: "100%" }}>
-                            <View
-                                style={{
-                                    flexDirection: "row",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    paddingVertical: 20,
-                                    width: "100%",
-                                }}
-                            >
-                                <TouchableOpacity
-                                    style={{
-                                        flexDirection: "row",
-                                        justifyContent: "space-between",
-                                        alignItems: "center",
-                                        maxWidth: "64%",
-                                    }}
-                                >
+                            <View style={styles.row}>
+                                <TouchableOpacity style={styles.content}>
                                     <Image
                                         source={data.profileImage}
-                                        style={{
-                                            width: 50,
-                                            height: 50,
-                                            borderRadius: 100,
-                                            marginRight: 10,
-                                        }}
+                                        style={styles.avatar}
                                     />
                                     <Text
-                                        style={{ fontSize: 15, color: "#fff" }}
-                                        onPress={() => navigation.push('FriendProfile', {
-                                            name: data.name,
-                                            profileImage: data.profileImage,
-                                            follow: data.follow,
-                                            post: data.posts,
-                                            followers: data.followers,
-                                            following: data.following
-                                        })}
+                                        style={styles.name}
+                                        onPress={() =>
+                                            navigation.push("FriendProfile", {
+                                                name: data.name,
+                                                profileImage: data.profileImage,
+                                                follow: data.follow,
+                                                post: data.posts,
+                                                followers: data.followers,
+                                                following: data.following,
+                                            })
+                                        }
                                     >
                                         <Text style={{ fontWeight: "bold" }}>
                                             {data.name}
-                                        </Text>{" "}
+                                        </Text>
                                         , who you might know, is on instagram
                                     </Text>
                                 </TouchableOpacity>
@@ -85,19 +55,15 @@ const NotificationScreen = () => {
                                     style={{ width: follow ? 72 : 68 }}
                                 >
                                     <View
-                                        style={{
-                                            width: "100%",
-                                            height: 30,
-                                            borderRadius: 5,
-                                            backgroundColor: follow
-                                                ? null
-                                                : "#3493d9",
-                                            borderWidth: follow ? 1 : 0,
-                                            borderColor:
-                                                "rgba(255, 255, 255, 0.15)",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                        }}
+                                        style={[
+                                            styles.btnFollow,
+                                            {
+                                                backgroundColor: follow
+                                                    ? null
+                                                    : "#3493d9",
+                                                borderWidth: follow ? 1 : 0,
+                                            },
+                                        ]}
                                     >
                                         <Text style={{ color: "#fff" }}>
                                             {follow ? "Following" : "Follow"}
@@ -108,81 +74,53 @@ const NotificationScreen = () => {
                         </View>
                     );
                 })}
-                <Text
-                    style={{
-                        color: "#fff",
-                        fontWeight: "bold",
-                        paddingVertical: 10,
-                    }}
-                >
-                    Suggestions for you
-                </Text>
+                <Text style={styles.suggestionTitle}>Suggestions for you</Text>
                 {FRIENDPROFILEDATA.slice(5.12).map((data, index) => {
                     const [follow, setFollow] = useState(data.follow);
                     const [close, setClose] = useState(false);
                     return (
                         <View key={index}>
                             {close ? null : (
-                                <View
-                                    style={{
-                                        paddingVertical: 10,
-                                        flexDirection: "row",
-                                        width: "100%",
-                                        justifyContent: "space-between",
-                                    }}
-                                >
+                                <View style={styles.row}>
                                     <View>
                                         <TouchableOpacity
-                                            style={{
-                                                flexDirection: "row",
-                                                alignItems: "center",
-                                                maxWidth: "64%",
-                                            }}
-                                            
-                                        onPress={() => navigation.push('FriendProfile', {
-                                            name: data.name,
-                                            profileImage: data.profileImage,
-                                            follow: data.follow,
-                                            post: data.posts,
-                                            followers: data.followers,
-                                            following: data.following
-                                        })}
+                                            style={styles.content}
+                                            onPress={() =>
+                                                navigation.push(
+                                                    "FriendProfile",
+                                                    {
+                                                        name: data.name,
+                                                        profileImage:
+                                                            data.profileImage,
+                                                        follow: data.follow,
+                                                        post: data.posts,
+                                                        followers:
+                                                            data.followers,
+                                                        following:
+                                                            data.following,
+                                                    }
+                                                )
+                                            }
                                         >
                                             <Image
                                                 source={data.profileImage}
-                                                style={{
-                                                    width: 50,
-                                                    height: 50,
-                                                    borderRadius: 99,
-                                                    marginRight: 10,
-                                                }}
+                                                style={styles.avatar}
                                             />
                                             <View style={{ width: "100%" }}>
                                                 <Text
-                                                    style={{
-                                                        color: "#fff",
-                                                        fontSize: 15,
-                                                        fontWeight: "bold",
-                                                    }}
+                                                    style={[
+                                                        styles.name,
+                                                        { fontWeight: "bold" },
+                                                    ]}
                                                 >
                                                     {data.name}
                                                 </Text>
                                                 <Text
-                                                    style={{
-                                                        color: "#fff",
-                                                        fontSize: 13,
-                                                        opacity: 0.5,
-                                                    }}
+                                                    style={styles.accountName}
                                                 >
                                                     {data.accountName}
                                                 </Text>
-                                                <Text
-                                                    style={{
-                                                        color: "#fff",
-                                                        fontSize: 13,
-                                                        opacity: 0.5,
-                                                    }}
-                                                >
+                                                <Text style={styles.desc}>
                                                     Suggested for you
                                                 </Text>
                                             </View>
@@ -204,22 +142,18 @@ const NotificationScreen = () => {
                                                 }
                                             >
                                                 <View
-                                                    style={{
-                                                        width: "100%",
-                                                        height: 30,
-                                                        borderRadius: 5,
-                                                        backgroundColor: follow
-                                                            ? null
-                                                            : "#3493d9",
-                                                        borderWidth: follow
-                                                            ? 1
-                                                            : 0,
-                                                        borderColor:
-                                                            "rgba(255, 255, 255, 0.15)",
-                                                        justifyContent:
-                                                            "center",
-                                                        alignItems: "center",
-                                                    }}
+                                                    style={[
+                                                        styles.btnFollow,
+                                                        {
+                                                            backgroundColor:
+                                                                follow
+                                                                    ? null
+                                                                    : "#3493d9",
+                                                            borderWidth: follow
+                                                                ? 1
+                                                                : 0,
+                                                        },
+                                                    ]}
                                                 >
                                                     <Text
                                                         style={{
@@ -243,24 +177,19 @@ const NotificationScreen = () => {
                                                     }
                                                 >
                                                     <View
-                                                        style={{
-                                                            width: "100%",
-                                                            height: 30,
-                                                            borderRadius: 5,
-                                                            backgroundColor:
-                                                                follow
-                                                                    ? null
-                                                                    : "#3493d9",
-                                                            borderWidth: follow
-                                                                ? 1
-                                                                : 0,
-                                                            borderColor:
-                                                                "rgba(255, 255, 255, 0.15)",
-                                                            justifyContent:
-                                                                "center",
-                                                            alignItems:
-                                                                "center",
-                                                        }}
+                                                        style={[
+                                                            styles.btnFollow,
+                                                            {
+                                                                backgroundColor:
+                                                                    follow
+                                                                        ? null
+                                                                        : "#3493d9",
+                                                                borderWidth:
+                                                                    follow
+                                                                        ? 1
+                                                                        : 0,
+                                                            },
+                                                        ]}
                                                     >
                                                         <Text
                                                             style={{
@@ -283,11 +212,7 @@ const NotificationScreen = () => {
                                                 >
                                                     <AntDesign
                                                         name="close"
-                                                        style={{
-                                                            fontSize: 15,
-                                                            color: "#fff",
-                                                            opacity: 0.8,
-                                                        }}
+                                                        style={styles.btnClose}
                                                     />
                                                 </TouchableOpacity>
                                             </>
@@ -309,5 +234,74 @@ const NotificationScreen = () => {
         </SafeAreaView>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#000",
+    },
+    heading: {
+        fontSize: 20,
+        fontWeight: "bold",
+        padding: 10,
+        color: "#fff",
+    },
+    newTitle: {
+        fontWeight: "600",
+        color: "#fff",
+        fontSize: 15,
+    },
+    row: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 10,
+        width: "100%",
+    },
+    avatar: {
+        width: 50,
+        height: 50,
+        borderRadius: 100,
+        marginRight: 10,
+    },
+    name: {
+        fontSize: 15,
+        color: "#fff",
+    },
+    content: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        maxWidth: "64%",
+    },
+    suggestionTitle: {
+        color: "#fff",
+        fontWeight: "bold",
+        paddingVertical: 10,
+    },
+    btnFollow: {
+        width: "100%",
+        height: 30,
+        borderRadius: 5,
+        borderColor: "rgba(255, 255, 255, 0.15)",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    accountName: {
+        color: "#fff",
+        fontSize: 13,
+        opacity: 0.5,
+    },
+    desc: {
+        color: "#fff",
+        fontSize: 13,
+        opacity: 0.5,
+    },
+    btnClose: {
+        fontSize: 15,
+        color: "#fff",
+        opacity: 0.8,
+    },
+});
 
 export default NotificationScreen;

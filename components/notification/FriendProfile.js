@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    StyleSheet,
 } from "react-native";
 import React, { useState } from "react";
 import { ProfileBody, ProfileButtons } from "../profile/ProfileBody";
@@ -16,14 +17,7 @@ const FriendProfile = ({ route, navigation }) => {
         route.params;
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#000", padding: 10 }}>
-            <View
-                style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    marginHorizontal: 15,
-                }}
-            >
+            <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image
                         source={require("../../assets/logo/back.png")}
@@ -31,15 +25,7 @@ const FriendProfile = ({ route, navigation }) => {
                     />
                 </TouchableOpacity>
 
-                <Text
-                    style={{
-                        color: "#fff",
-                        fontSize: 16,
-                        fontWeight: "bold",
-                    }}
-                >
-                    {name}
-                </Text>
+                <Text style={styles.name}>{name}</Text>
                 <TouchableOpacity>
                     <Image source={require("../../assets/logo/menu.png")} />
                 </TouchableOpacity>
@@ -52,17 +38,7 @@ const FriendProfile = ({ route, navigation }) => {
                 following={following}
             />
             <ProfileButtons id={1} />
-            <Text
-                style={{
-                    paddingVertical: 10,
-                    fontWeight: "bold",
-                    fontSize: 15,
-                    color: "#fff",
-                    marginHorizontal: 15,
-                }}
-            >
-                Suggested for you
-            </Text>
+            <Text style={styles.title}>Suggested for you</Text>
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -76,60 +52,25 @@ const FriendProfile = ({ route, navigation }) => {
                           return (
                               <View key={index}>
                                   {data.name === name || close ? null : (
-                                      <View
-                                          style={{
-                                              width: 160,
-                                              height: 200,
-                                              margin: 3,
-                                              justifyContent: "center",
-                                              alignItems: "center",
-                                              borderWidth: 0.5,
-                                              borderColor:
-                                                  "rgba(255, 255, 255, 0.15)",
-                                              borderRadius: 2,
-                                              position: "relative",
-                                          }}
-                                      >
+                                      <View style={styles.section}>
                                           <TouchableOpacity
-                                              style={{
-                                                  position: "absolute",
-                                                  top: 10,
-                                                  right: 10,
-                                              }}
+                                              style={styles.locationClose}
                                               onPress={() => setClose(true)}
                                           >
                                               <AntDesign
                                                   name="close"
-                                                  style={{
-                                                      fontSize: 20,
-                                                      color: "#fff",
-                                                      opacity: 0.5,
-                                                  }}
+                                                  style={styles.btnClose}
                                               />
                                           </TouchableOpacity>
                                           <Image
                                               source={data.profileImage}
-                                              style={{
-                                                  width: 80,
-                                                  height: 80,
-                                                  borderRadius: 99,
-                                                  margin: 10,
-                                              }}
+                                              style={styles.profileImage}
                                           />
-                                          <Text
-                                              style={{
-                                                  color: "#fff",
-                                                  fontWeight: "bold",
-                                                  fontSize: 16,
-                                              }}
-                                          >
+                                          <Text style={styles.suggestName}>
                                               {data.name}
                                           </Text>
                                           <Text
-                                              style={{
-                                                  color: "#fff",
-                                                  fontSize: 12,
-                                              }}
+                                              style={styles.suggestAccountName}
                                           >
                                               {data.accountName}
                                           </Text>
@@ -138,7 +79,9 @@ const FriendProfile = ({ route, navigation }) => {
                                                   width: "80%",
                                                   paddingVertical: 10,
                                               }}
-                                              onPress={() => setIsFollow(!isFollow)}
+                                              onPress={() =>
+                                                  setIsFollow(!isFollow)
+                                              }
                                           >
                                               <View
                                                   style={{
@@ -177,3 +120,60 @@ const FriendProfile = ({ route, navigation }) => {
 };
 
 export default FriendProfile;
+
+const styles = StyleSheet.create({
+    header: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginHorizontal: 15,
+    },
+    name: {
+        color: "#fff",
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    title: {
+        paddingVertical: 10,
+        fontWeight: "bold",
+        fontSize: 15,
+        color: "#fff",
+        marginHorizontal: 15,
+    },
+    section: {
+        width: 160,
+        height: 200,
+        margin: 3,
+        justifyContent: "center",
+        alignItems: "center",
+        borderWidth: 0.5,
+        borderColor: "rgba(255, 255, 255, 0.15)",
+        borderRadius: 2,
+        position: "relative",
+    },
+    locationClose: {
+        position: "absolute",
+        top: 10,
+        right: 10,
+    },
+    btnClose: {
+        fontSize: 20,
+        color: "#fff",
+        opacity: 0.5,
+    },
+    profileImage: {
+        width: 80,
+        height: 80,
+        borderRadius: 99,
+        margin: 10,
+    },
+    suggestName: {
+        color: "#fff",
+        fontWeight: "bold",
+        fontSize: 16,
+    },
+    suggestAccountName: {
+        color: "#fff",
+        fontSize: 12,
+    },
+});

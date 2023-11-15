@@ -12,12 +12,13 @@ import { Divider } from "react-native-elements";
 import { FRIENDPROFILEDATA } from "../data/friendProfileData";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
+import { POSTS } from "../data/post";
 
 const NotificationScreen = () => {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.heading}>Activity</Text>
+            <Text style={styles.heading}>Notification</Text>
             <Divider />
             <ScrollView style={{ margin: 10 }}>
                 <Text style={styles.newTitle}>New</Text>
@@ -74,6 +75,41 @@ const NotificationScreen = () => {
                         </View>
                     );
                 })}
+                <Text style={styles.newTitle}>This Week</Text>
+                {POSTS.map((post, index) => (
+                    <View key={index}>
+                        <View
+                            style={{
+                                flexDirection: "row",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                            }}
+                        >
+                            <TouchableOpacity
+                                style={{
+                                    flexDirection: "row",
+                                    alignItems: "center",
+                                    paddingVertical: 10,
+                                }}
+                            >
+                                <Image
+                                    source={post.profile_picture}
+                                    style={styles.avatar}
+                                />
+                                <Text style={styles.name}>
+                                    <Text style={{ fontWeight: "bold" }}>
+                                        {post.user}
+                                    </Text>
+                                    , add a new post
+                                </Text>
+                            </TouchableOpacity>
+                            <Image
+                                source={{ uri: post.imageURL }}
+                                style={{ width: 60, height: 60 }}
+                            />
+                        </View>
+                    </View>
+                ))}
                 <Text style={styles.suggestionTitle}>Suggestions for you</Text>
                 {FRIENDPROFILEDATA.slice(5.12).map((data, index) => {
                     const [follow, setFollow] = useState(data.follow);

@@ -1,10 +1,10 @@
-import { StatusBar, StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { StatusBar, StyleSheet, Text, View, Image, ScrollView, TouchableOpacity,SafeAreaView } from 'react-native'
 
 import React, { useState, useRef } from 'react'
 import { Camera } from 'expo-camera'
 
 
-const CameraPictureShot = () => {
+const CameraPictureShot = ({navigation}) => {
   const cameraRef = useRef(null);
   const [image, setImage] = useState();
 
@@ -24,7 +24,7 @@ const CameraPictureShot = () => {
     }
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
       <View style={styles.camera}>
         <Camera
@@ -38,10 +38,13 @@ const CameraPictureShot = () => {
               style={{ position: 'absolute', left: 0 }}
               source={require('../assets/image/Settings.png')}
             />
+            <TouchableOpacity style={{ position: 'absolute', right: 0 }} onPress={() => navigation.goBack()}>
+
             <Image
-              style={{ position: 'absolute', right: 0 }}
+              
               source={require('../assets/image/Back.png')}
             />
+            </TouchableOpacity>
           </View>
 
           <View style={styles.takecamera}>
@@ -77,7 +80,7 @@ const CameraPictureShot = () => {
           <Text style={{ color: '#B2B2B2', marginLeft: 15, marginRight: 185 }}>SUPER</Text>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

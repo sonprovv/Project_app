@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image, FlatList, StatusBar, Pressable, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, FlatList, StatusBar, Pressable, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState, useRef } from 'react'
 import { Camera } from 'expo-camera'
 
-const MyLive = () => {
+const MyLive = ({navigation}) => {
     const cameraRef = useRef(null);
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
@@ -30,7 +30,7 @@ const MyLive = () => {
         }
     };
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <StatusBar />
             <View style={{ flex: 1 }}>
                 <Camera
@@ -53,7 +53,10 @@ const MyLive = () => {
                                 /> 1
                             </Text>
                         </View>
-                        <Text style={{ color: '#F2F2F2', position: 'absolute', right: 15, fontWeight: 'bold' }}>End</Text>
+                        <TouchableOpacity onPress={() => navigation.goBack()} style={{position: 'absolute', right: 15}}>
+
+                        <Text style={{ color: '#F2F2F2', fontWeight: 'bold' }}>End</Text>
+                        </TouchableOpacity>
                     </View>
                     <ScrollView style={styles.notification} ref={scrollViewRef} // Attach the ref to the ScrollView
                         onContentSizeChange={() => {
@@ -84,7 +87,7 @@ const MyLive = () => {
                 <View style={styles.comment}>
                     <TextInput placeholder='Comment'
                         placeholderTextColor='#666666'
-                        style={{ color: 'white' }}
+                        style={{ color: 'white',width:'40%' }}
                         value={newComment}
                         onChangeText={(text) => setNewComment(text)} />
                     <Pressable onPress={handleIconMenuPress} style={{ marginLeft: 35 }}>
@@ -106,7 +109,7 @@ const MyLive = () => {
                     source={require('../assets/image/Rectangle2.png')}
                 />
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

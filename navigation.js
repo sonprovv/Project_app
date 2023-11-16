@@ -12,6 +12,9 @@ import FriendProfile from "./components/notification/FriendProfile";
 import EditProfile from "./components/profile/EditProfile";
 import ProfileScreen from "./screens/ProfileScreen";
 import MessagesScreen from "./screens/MessagesScreen";
+import CameraPictureShot from "./screens/CameraPictureShot";
+import AddImage from "./screens/AddImage";
+import MyLive from "./screens/MyLive";
 
 const Tab = createBottomTabNavigator();
 
@@ -57,7 +60,7 @@ const MyTab = () => {
         >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Search" component={SearchScreen} />
-            <Tab.Screen name="Add" component={NewPostScreen} />
+            <Tab.Screen name="Add" component={AddImage} />
             <Tab.Screen name="Notification" component={NotificationScreen} />
             <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
@@ -93,6 +96,8 @@ const SignedInStack = () => {
                 />
                 <Stack.Screen name="FriendProfile" component={FriendProfile} />
                 <Stack.Screen name="EditProfile" component={EditProfile} />
+                <Stack.Screen name="Camera" component={CameraPictureShot} />
+                <Stack.Screen name="MyLive" component={MyLive} />
                 
             </Stack.Navigator>
             <StatusBar barStyle="light-content" backgroundColor="#000" />

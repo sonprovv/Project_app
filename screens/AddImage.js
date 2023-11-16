@@ -1,4 +1,4 @@
-import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native'
+import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View, FlatList, SafeAreaView } from 'react-native'
 import React,{useState} from 'react'
 
 const AddImage = () => {
@@ -33,7 +33,7 @@ const AddImage = () => {
         </TouchableOpacity>
     );
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <StatusBar />
             <View style={styles.topbar}>
                 <TouchableOpacity style={{ position: 'absolute', left: 18 }}>
@@ -94,7 +94,7 @@ const AddImage = () => {
                     <Text style={{ color: 'white' }}>Video</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

@@ -4,7 +4,7 @@ import React from "react";
 const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push('Camera')}>
                 <Image
                     style={[styles.icon, styles.iconcamera]}
                     source={require("../../assets/logo/camera.png")}
@@ -17,7 +17,7 @@ const Header = ({navigation}) => {
                 />
             </TouchableOpacity>
             <View style={styles.containerRight}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push("MyLive")}>
                 <Image
                     style={styles.icon}
                     source={require("../../assets/logo/IGTV.png")}

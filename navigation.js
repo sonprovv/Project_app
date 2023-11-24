@@ -6,7 +6,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import "react-native-gesture-handler";
 import SearchScreen from "./screens/SearchScreen";
 import HomeScreen from "./screens/HomeScreen";
-import NewPostScreen from "./screens/NewPostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
 import FriendProfile from "./components/notification/FriendProfile";
 import EditProfile from "./components/profile/EditProfile";
@@ -15,6 +14,10 @@ import MessagesScreen from "./screens/MessagesScreen";
 import CameraPictureShot from "./screens/CameraPictureShot";
 import AddImage from "./screens/AddImage";
 import MyLive from "./screens/MyLive";
+import SignUpScreen from "./screens/SignUpScreen";
+import LoginScreen from "./screens/LoginScreen";
+import InputLoginScreen from "./screens/InputLoginScreen";
+import StoryScreen from "./screens/StoryScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -73,20 +76,20 @@ const MyDrawer = () => {
             <SafeAreaView>
                 <Text>Archive</Text>
             </SafeAreaView>
-        )
-    }
+        );
+    };
     return (
         <Drawer.Navigator>
             <Drawer.Screen name="Archive" component={Archive} />
         </Drawer.Navigator>
-    )
-}
+    );
+};
 
 const SignedInStack = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="HomeScreen"
+                initialRouteName="InputLoginScreen"
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen name="MyTab" component={MyTab} />
@@ -98,7 +101,13 @@ const SignedInStack = () => {
                 <Stack.Screen name="EditProfile" component={EditProfile} />
                 <Stack.Screen name="Camera" component={CameraPictureShot} />
                 <Stack.Screen name="MyLive" component={MyLive} />
-                
+                <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+                <Stack.Screen name="LoginScreen" component={LoginScreen} />
+                <Stack.Screen
+                    name="InputLoginScreen"
+                    component={InputLoginScreen}
+                />
+                <Stack.Screen name="StoryScreen" component={StoryScreen} />
             </Stack.Navigator>
             <StatusBar barStyle="light-content" backgroundColor="#000" />
         </NavigationContainer>

@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { USER } from "../../data/user";
 
-const Stories = () => {
+const Stories = ({navigation}) => {
     return (
         <View style={{ marginBottom: 13 }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -17,6 +17,7 @@ const Stories = () => {
                     <TouchableOpacity
                         key={index}
                         style={{ alignItems: "center" }}
+                        onPress={() => navigation.navigate("StoryScreen")}
                     >
                         <Image
                             source={ story.image }

@@ -13,16 +13,20 @@ import {
     heightPercentageToDP,
 } from "react-native-responsive-screen";
 
-const StoryScreen = () => {
+const StoryScreen = ({route, navigation }) => {
+    const { name, image, story } = route.params;
+
     useEffect(() => {
-        let timer = setTimeout(() => {}, 5000);
+        let timer = setTimeout(() => {
+            navigation.goBack();
+        }, 5000);
 
         Animated.timing(progress, {
             toValue: 5,
             duration: 5000,
             useNativeDriver: false,
         }).start();
-        return clearTimeout(timer);
+        return () => clearTimeout(timer);
     }, []);
 
     const [progress, setProgress] = useState(new Animated.Value(0));
@@ -45,10 +49,10 @@ const StoryScreen = () => {
                     </View>
                     <View style={styles.User}>
                         <Image
-                            source={require("../assets/img/Rectangle.png")}
+                            source={image}
                             style={styles.UserIcon}
                         />
-                        <Text style={{ color: "white" }}>Nguyen_hieu</Text>
+                        <Text style={{ color: "white",fontWeight:'600' }}>{name}</Text>
                         <Text style={{ color: "rgba(255, 255, 255, 0.40)" }}>
                             4h
                         </Text>
@@ -56,7 +60,7 @@ const StoryScreen = () => {
                 </View>
 
                 <Image
-                    source={require("../assets/img/Rectangle.png")}
+                    source={story}
                     style={{
                         width: widthPercentageToDP("100%"),
                         height: heightPercentageToDP("83%"),
@@ -73,6 +77,7 @@ const StoryScreen = () => {
                     <TextInput
                         placeholder="Send Message"
                         placeholderTextColor="#fff"
+                        style={{ color: "#fff" }}
                     />
                 </View>
                 <Image source={require("../assets/img/Messanger.png")} />

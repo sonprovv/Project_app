@@ -19,10 +19,14 @@ export const POSTS = [
                 comment: "Đẹp đôi đấy 🤡",
             },
         ],
+        posts: 1266,
+        followers: "109 M",
+        following: 408,
+        follow: false,
     },
     {
         imageURL:
-            "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/332060186_1851521718546713_1408545194970932353_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeFHlfD1w4GLHZLOlhdKUhnnYwTo7TZcLZRjBOjtNlwtlD4P9FeJLXM0EAb_pdtkdHP5LxXOwhSWU3XXTV4v8X7E&_nc_ohc=e6fdZr4lEHIAX_Esdxg&_nc_ht=scontent.fhan3-2.fna&oh=03_AdT5fwAF_1xSZFExabBXBSbA1om4pn0qREOGH9IBFBaW_Q&oe=657C2C23",
+            "https://lh3.googleusercontent.com/pw/ABLVV86B0WJjkBlJFk2R5QPIdW54rDXqEfw6xQD7Gte58Qo0SCFCBg4oZrXhCIKYlNrkNHGoEU0zkTkMhvUewj1c76uEVnULBa9oIM_9nwXrcbeljHbEogyK54hTW4fH6SqGvfqMyCsXAdZHB0K2Hvj0QqCL_HQ6C_D7DCVxgS3WPq3mg4J2m-PpN7TDlCIqC8VJUDAnWWqLL5EBih0_c_Dgkzsa6ITEJRAMNJhEOx4jAqOXMWUEMt1Mi2lOnrd_DqkihwiaQxjm6tw5sKsbk-CpPDNSF6xX3dgD_m0oKk-zF7k8J7hlVP-7LTxkUJK91nMAOdvfkFQK3VSSVdsQulxA5SmHYi_XiJZ9ChrfglD4Hj93h_37n5Xur44rITjyNlLsQKI2qn3Fa5w9SGWALauD3CKIA7fSyBUFDabtydt7H68ZNI21a-T_CSyauJrFLT_Hrz2IDSPC83X9TeWfg1ZKpkGPac_EjB12AJQsu6kI7Zvc2YCv8ZZarS4uIjsle6wdv1BGBh_8jixnUK4VX9lb1I63BMOcSFPKSjmBoMOVlGYT_W9tRpzktddJrH04ocncBE6sVlfT69Dak8AEUG0hVYMTNaCbxs6HO09KOpW_miKKhcJlQSlq3kuFzw1-JVzm1RNsTDQpC_Vn8dYQ4E9F_QV4OrhsvzcHoTtVkFzwe9SEGgnxKhoW_s5PuOSdfboR1BXiC03sBZAtNopDSyAZabjvjE_xkBSTf11HRJ1K5m5VxeqeG0t0uL4j1eqytFXS9UmwNjnI7YTI_RSY4s4zUx81y0dHeFHX92yxal_MWgt8tbPLRQ07sMiVIiuoF7DlDoT4ZgaU8CUgNwvLw3Oq7lOjIgL61wcUImdxJLiT7JMnWiKsW0FA4rhVGRG-c5Q1PAbcSw=w1080-h1430-s-no-gm?authuser=0",
         user: USER[1].user,
         likes: 524,
         caption: "Quá đẹp trai =))",
@@ -38,10 +42,14 @@ export const POSTS = [
                 comment: "Đêm qua em tuyệt lắm 🫣",
             },
         ],
+        posts: 1266,
+        followers: "109 M",
+        following: 408,
+        follow: false,
     },
     {
         imageURL:
-            "https://f12-zpc.zdn.vn/84235859802612019/023e3216351ee340ba0f.jpg",
+            "https://instagram.fhan3-1.fna.fbcdn.net/v/t51.2885-19/274635628_124479156807277_4492911370477050647_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fhan3-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=OWIwYG6i1s0AX_xgHVr&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBUK5Z7njNX-e6NNodCga-UONFa-q2hDhFRUgmC44gEWA&oe=658BD101&_nc_sid=8b3546",
         user: USER[3].user,
         likes: 1672,
         caption: "Vợ anh =))",
@@ -53,5 +61,9 @@ export const POSTS = [
                 comment: "Anh đến đây để thu họ. Nộp họ đi em",
             },
         ],
+        posts: 1266,
+        followers: "109 M",
+        following: 408,
+        follow: false,
     },
 ];

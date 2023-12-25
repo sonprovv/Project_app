@@ -96,7 +96,19 @@ const NotificationScreen = () => {
                                     source={post.profile_picture}
                                     style={styles.avatar}
                                 />
-                                <Text style={styles.name}>
+                                <Text
+                                    style={styles.name}
+                                    onPress={() =>
+                                        navigation.push("FriendProfile", {
+                                            name: post.user,
+                                            profileImage: post.profile_picture,
+                                            follow: post.follow,
+                                            post: post.posts,
+                                            followers: post.followers,
+                                            following: post.following,
+                                        })
+                                    }
+                                >
                                     <Text style={{ fontWeight: "bold" }}>
                                         {post.user}
                                     </Text>

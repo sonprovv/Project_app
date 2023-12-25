@@ -11,13 +11,15 @@ import {
 
 import React, { useState, useRef } from "react";
 import { Camera } from "expo-camera";
+//import { MediaCapture } from 'some-library'; // Replace 'some-library' with the actual library you're using
+
 
 const CameraPictureShot = ({ navigation }) => {
     const cameraRef = useRef(null);
     const [image, setImage] = useState();
 
     const takePicture = async () => {
-        if (this.camera) {
+        if (cameraRef.current) {
             const options = { quality: 0.5, base64: true };
             const data = await this.camera.takePictureAsync(options);
 

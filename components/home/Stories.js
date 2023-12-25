@@ -17,7 +17,11 @@ const Stories = ({navigation}) => {
                     <TouchableOpacity
                         key={index}
                         style={{ alignItems: "center" }}
-                        onPress={() => navigation.navigate("StoryScreen")}
+                        onPress={() => navigation.navigate("StoryScreen", {
+                            name: story.user,
+                            image: story.image,
+                            story: story.story
+                        })}
                     >
                         <Image
                             source={ story.image }
